@@ -1,16 +1,42 @@
 <!doctype html>
 <html ng-app='ToDo'>
   <head>
-    <title>My Angular App</title>
+    <title>My Angular To-Do App</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
     <script src='app.js'></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="app.css">
   </head>
   <body>
-    <div ng-controller='ToDoController'>
-        <input type='text' ng-model='todo' />
-        <button ng-click='$scope.add()'>Add</button>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">My Angular To-Do App</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container todos" ng-controller='ToDoController'>
+
+      <div class="starter-template">
+          <h1>My To-Do's</h1>
         
-        <div ng-repeat='items'>{{item.todo}} - {{item.time}}</div>
+          <div class="alert alert-info" role="alert" ng-show="!items.length">
+              No to-do items have been added yet.
+          </div>
+
+          <ul>
+              <li ng-repeat='items'>{{item.todo}} - {{item.time}}</li>
+          </ul>
+
+          <form class="form-inline">
+              <input type='text' ng-model='todo' class="form-control" />
+              <button ng-click='$scope.add()' class="btn btn-default">Add</button>
+          </form>
+      </div>
+
     </div>
+
   </body>
 </html>
