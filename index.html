@@ -1,0 +1,16 @@
+<!doctype html>
+<html ng-app='ToDo'>
+  <head>
+    <title>My Angular App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src='app.js'></script>
+  </head>
+  <body>
+    <div ng-controller='ToDoController'>
+        <input type='text' ng-model='todo' />
+        <button ng-click='$scope.add()'>Add</button>
+        
+        <div ng-repeat='items'>{{item.todo}} - {{item.time}}</div>
+    </div>
+  </body>
+</html>
