@@ -27,12 +27,14 @@
           </div>
 
           <ul>
-              <li ng-repeat='items'>{{item.todo}} - {{item.time}}</li>
+              <li ng-repeat='item in items'>
+			  <input type="checkbox"  ng-click="remove($index)" >
+			  {{item.todo}} - {{item.time}}</li>
           </ul>
 
           <form class="form-inline">
               <input type='text' ng-model='todo' class="form-control" />
-              <button ng-click='$scope.add()' class="btn btn-default">Add</button>
+              <button ng-click='add()' class="btn btn-default">Add</button>
           </form>
       </div>
 
