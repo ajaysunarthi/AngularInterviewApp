@@ -33,6 +33,10 @@ Now to the challenges:
 ##Solution
 Initial errors
 1 return have two items so semi-colon can't be placed after items:[] in app.js, replace with comma instead
+
 2 in index.html ng-repeat should have item in items
+
 3 while attaching variables with scope in controller, view doesn't requires the expressions to be using $scope as well. 
     Which means replace ng-click='$scope.add()' with ng-click='add()' inside index.html file  
+
+Code is updated with checkbox feature
